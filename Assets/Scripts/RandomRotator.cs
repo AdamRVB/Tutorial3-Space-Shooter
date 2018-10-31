@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomRotator : MonoBehaviour {
+public class RandomRotator : MonoBehaviour
+{
+    private Rigidbody rb;
+    public float tumble;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.angularVelocity = Random.insideUnitSphere * tumble;
+    }
 }
